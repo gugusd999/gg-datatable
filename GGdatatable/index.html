@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="datatables/gg-table.css">
+    <style>
+        .container{
+            position: abolute;
+            display: block;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <script src="jquery/jquery.js"></script>
+    <script src="datatables/gg-table.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Plugin Datatable Jquery by gugus</h1>
+        <div>
+        <div  id="tablesaya" class="gg-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>no</th>
+                        <th>data1</th>
+                        <th>data2</th>
+                        <th>data3</th>
+                        <th>data4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div  id="tabel2" class="gg-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>no</th>
+                        <th>data1</th>
+                        <th>data2</th>
+                        <th>data3</th>
+                        <th>data4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h1></h1>
+
+    <script>
+        $(document).ready(function () {
+
+            $(document).GGtable({
+                target: "#tablesaya",
+                initial: "tabel1",
+                url:"serverside/serverside.php",
+                method: "POST",
+            });
+
+            $(document).GGtable({
+                target: "#tabel2",
+                initial: "tabel2",
+                url:"serverside/serverside.php",
+                method: "POST",
+            });
+
+        });
+    </script>
+</body>
+</html>
